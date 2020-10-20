@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
+
 import styles from './CreateList.module.scss';
 
-
 const CreateList: React.FC = () => {
-  let [list, setState] = useState(['']);
+  const [list, setList] = useState<string[]>(['']);
 
   const appendToList = () => {
-    list.push('');
-    console.log(list);
-    list = [...list];
-    setState(list);
+    setList([...list, '']);
   }
 
   const changeInput = (e: any, idx: number) => {
-    list[idx] = list[idx] + e.target.value;
-    console.log(list);
+    const newList = [...list]
+    newList[idx] = e.target.value;
+    setList(newList)
+
+    // setList([...list.slice(0, idx), e.target.value, ...list.slice(idx)])
   }
+
   return (
     <div>
       {list.map((item, i) =>
-        <input value={item} onChange={(e) => changeInput(e, i)}/>
+        <input type="text" key={i} value={item} onInput={(e) => changeInput(e, i)}/>
       )}
-      <p>You clicked {list} times</p>
       <button onClick={appendToList}>
         Click me
       </button>
