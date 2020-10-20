@@ -3,11 +3,17 @@ import styles from './CreateList.module.scss';
 
 
 const CreateList: React.FC = () => {
-  const [count, setCount] = useState(0);
+  const [list, setState] = useState(['']);
+
+  const appendToList = () => {
+    list.push('');
+    console.log(list);
+    setState(list);
+  }
   return (
     <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
+      <p>You clicked {list} times</p>
+      <button onClick={appendToList}>
         Click me
       </button>
     </div>
