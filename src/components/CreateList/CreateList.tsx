@@ -19,12 +19,14 @@ const CreateList: React.FC = () => {
 
   return (
     <div>
-      {list.map((item, i) =>
-        <input type="text" key={i} value={item} onInput={(e) => changeInput(e, i)}/>
-      )}
-      <button onClick={appendToList}>
-        Click me
+      <div className="d-flex flex-column w-50 mx-auto">
+        {list.map((item, i) =>
+          <input type="text" key={i} value={item} onInput={(e) => changeInput(e, i)} />
+        )}
+        <button onClick={appendToList}>
+          Click me
       </button>
+      </div>
     </div>
   );
 };

@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import CreateList from './components/CreateList/CreateList';
 
