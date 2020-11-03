@@ -32,15 +32,18 @@ const CreateList: React.FC = () => {
       <div className="d-flex flex-column w-50 mx-auto">
         {list.map((item, i) =>
           <InputGroup key={i}>
-            <select
-              className="w-25"
-              defaultValue={i}
-              onChange={(e) => changeOrder(e, i)}
-            >
-              {Array.from(Array(list.length), (x, j) => {
-                return <option key={j} value={j} selected={j === i}>{j + 1}</option>
-              })}
-            </select>
+            <div className="w-25">
+              <span>{i}</span>
+              <select
+                className="w-25"
+                defaultValue={i}
+                onChange={(e) => changeOrder(e, i)}
+              >
+                {Array.from(Array(list.length), (x, j) => {
+                  return <option key={j} value={j}>{j + 1}</option>
+                })}
+              </select>
+            </div>
             <input
               className="w-75"
               type="text"

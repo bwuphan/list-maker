@@ -7,6 +7,7 @@ import {
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'antd/dist/antd.css';
 
 import CreateList from './components/CreateList/CreateList';
 
